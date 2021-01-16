@@ -1,0 +1,11 @@
+ul {
+    list-style-type: none;
+    background-color: aqua;
+    /* Remove bullets */
+}
+
+input[type=text] {
+    background-color: yellow;
+    color: brown;
+    /* Remove bullets */
+}

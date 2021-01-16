@@ -1,0 +1,65 @@
+<!doctype html>
+<html dir="rtl" lang="he">
+
+<head>
+    <link rel="stylesheet" href="styles.css">
+    <meta charset="utf-8">
+    <title>דף חדש</title>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+</head>
+
+<body>
+    <script type="text/javascript">
+        $(document).ready(function() {
+            //set initial state.
+            $('input[type=checkbox]').change(function() {
+                var sum = $('#sumOfOrder').val();
+
+                sum = parseInt(sum);
+
+                if (this.checked) {
+                    sum += 10;
+                } else {
+                    sum -= 10;
+                }
+
+                $('#sumOfOrder').val(sum);
+
+                //alert(sum);
+            });
+
+            $('#placeOrder').click(function(evt) {
+                const sum = $('#sumOfOrder').val();
+
+                alert("אם היה לך קוד פה, היית מזמין ב " + sum + "שקלים ");
+            });
+        });
+    </script>
+    קטלוג פרחים
+    <ul>
+        <li>
+            <div>
+                <input type="checkbox" id="zer1" name="zer1" value="zer1">
+                <label for="zer1">זר 1</label><br>
+                <a href="">
+                    <img border="0" alt="image1" src="image1.jpg" width="100" height="100">
+                </a>
+            </div>
+        </li>
+        <li>
+            <div>
+                <input type="checkbox" id="zer2" name="zer1" value="zer2">
+                <label for="zer2">זר 2</label><br>
+                <a href="">
+                    <img border="0" alt="image1" src="image2.jpg" width="100" height="100">
+                </a>
+            </div>
+        </li>
+    </ul>
+    <input type='text' id="sumOfOrder" value="0" />
+
+    <button id="placeOrder">הזמן</button>
+</body>
+
+</html>
